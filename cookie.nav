@@ -1,0 +1,27 @@
+$(".first_active").click(function(){
+  var className= $(this).text();
+
+  localStorage.setItem('active_show', className);
+  var get_var =  localStorage.getItem('active_show');
+      alert(get_var);
+
+}); 
+
+$( window ).on("load", function() {
+  var get_varr =  localStorage.getItem('active_show');
+//   $(this).addClass('activeclass');
+
+  //   alert(get_varr);
+
+
+  $( ".first_active" ).each(function() {
+    var classtext = $(this).text();
+    var get_text =  localStorage.getItem('active_show');
+
+    if( classtext == get_text ){
+
+      $( this ).addClass( "menu_active" );
+      //        alert(get_varr);
+    }
+  });
+});
